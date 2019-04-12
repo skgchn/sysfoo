@@ -43,4 +43,12 @@ jobs:
       # Build maven package
       - run: mvn package
       
-      - post: mv target/*.war $CIRCLE_ARTIFACTS/
+      - store_artifacts:
+          path: /tmp/core_dumps
+          
+      # - store_test_results:
+      #    path: target/surefire-reports
+          
+      - store_artifacts:
+          path: target/*.war
+ 
