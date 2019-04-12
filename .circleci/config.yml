@@ -38,4 +38,9 @@ jobs:
           key: v1-dependencies-{{ checksum "pom.xml" }}
 
       # run tests!
-      - run: mvn integration-test
+      # - run: mvn integration-test
+      
+      # Build maven package
+      - run: mvn package
+      
+      - post: mv target/*.war $CIRCLE_ARTIFACTS/
