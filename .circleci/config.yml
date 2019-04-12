@@ -50,5 +50,5 @@ jobs:
       #    path: target/surefire-reports
           
       - store_artifacts:
-          path: target/*.war
+          path: target/sysfoo.war
  
